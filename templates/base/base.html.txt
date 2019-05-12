@@ -10,7 +10,7 @@
     {% endblock}
 
 	{% block footer %}
-	<h5>Soy el footer del base </h5>
+	{% include 'base/header.html'%}
 	{% endblock}
 
 </body>
