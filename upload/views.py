@@ -6,11 +6,10 @@ from django.shortcuts import get_object_or_404, render_to_response
 
 # Create your views here.
 def upload_file(request):
-	respuesta = AlarmsData.objects.filter(id=2)
-	return render_to_response('upload/index.html', {'respuesta':respuesta})
+	return render_to_response('upload/index.html')
 
 def resultados(request):
-	respuesta = AlarmsData.objects.filter(id=2)
+	respuesta = AlarmsData.objects.filter(ev_ID=478614)
 	return render_to_response('upload/resultados.html', {'respuesta':respuesta})
 
 
