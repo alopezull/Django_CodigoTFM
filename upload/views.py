@@ -9,4 +9,8 @@ def upload_file(request):
 	respuesta = AlarmsData.objects.filter(id=2)
 	return render_to_response('upload/index.html', {'respuesta':respuesta})
 
+def resultados(request):
+	respuesta = AlarmsData.objects.filter(id=2)
+	return render_to_response('upload/resultados.html', {'respuesta':respuesta})
+
 
