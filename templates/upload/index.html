@@ -1,101 +1,105 @@
-<HTML>
+<html>
 
-<HEAD>
+<head>
 
-<TITLE>APP ALARMAS </TITLE>
+<titple>APP ALARMAS </title>
 
-</HEAD>
+</head>
 
-<BODY>
+<body>
 
 <!-- Código a visualizar -->
 
-<H1> APLICACI&Oacute;N ALARMAS UCIP</H1>
+<h1> APLICACI&Oacute;N ALARMAS UCIP</h1>
 
-<P> Esta aplicaci&oacute;n pretende ser una herramienta de consulta del sistema de alarmas implementado en el servicio UCIP del Hospital Sant Joan de D&eacute;u. 
+<p> Esta aplicaci&oacute;n pretende ser una herramienta de consulta del sistema de alarmas implementado en el servicio UCIP del Hospital Sant Joan de D&eacute;u. 
 
-<HR>
+<hr>
 
-<UL>
+<ul>
 
-<H3> Selecciona los datos que deseas filtrar:</H3>
+<h3> Selecciona los datos que deseas filtrar:</H3>
 
-<UL>
+<ul>
 
-<BR> <p> <STRONG>Fecha inicial </STRONG> <input type="date" name="XX/XX/XXXX" required></p>
+<form method="post" enctype="multipart/form-data" action="http:///resultados/" target="_blank" onsubmit="try {return window.confirm(&quot;Es posible que este formulario no funcione correctamente debido a ciertas restricciones de seguridad.\n¿Quieres continuar?&quot;);} catch (e) {return false;}">
 
-<BR> <p> <STRONG>Fecha final </STRONG> <input type="date" name="XX/XX/XXXX" required></p>
+<br> <p> <strong>Fecha inicial </strong> <input type="date" name="fechaIni"></p>
 
-<BR> <STRONG> N&uacute;mero de box: </STRONG> <BR> 
+<br> <p> <strong>Fecha final </strong> <input type="date" name="fechaFin"></p>
 
-<BR>
+<br> <strong> Número de box: </strong> <br> 
 
-<input type="checkbox" name="Box 1">Box 1
-<input type="checkbox" name="Box 2">Box 2
-<input type="checkbox" name="Box 3">Box 3
-<input type="checkbox" name="Box 4">Box 4
-<input type="checkbox" name="Box 5">Box 5
-<input type="checkbox" name="Box 6">Box 6
-<input type="checkbox" name="Box 7">Box 7
-<input type="checkbox" name="Box 8">Box 8
-<input type="checkbox" name="Box 9">Box 9
-<input type="checkbox" name="Box 10">Box 10 
-<input type="checkbox" name="Box 11">Box 11
-<input type="checkbox" name="Box 12">Box 12
+<br>
 
-<BR>
+<input type="checkbox" name="boxes[]" value="1">Box 1
+<input type="checkbox" name="boxes[]" value="2">Box 2
+<input type="checkbox" name="boxes[]" value="3">Box 3
+<input type="checkbox" name="boxes[]" value="4">Box 4
+<input type="checkbox" name="boxes[]" value="5">Box 5
+<input type="checkbox" name="boxes[]" value="6"> Box 6
+<input type="checkbox" name="boxes[]" value="7">Box 7
+<input type="checkbox" name="boxes[]" value="8">Box 8
+<input type="checkbox" name="Box9">Box 9
+<input type="checkbox" name="Box10">Box 10
+<input type="checkbox" name="Box11">Box 11
+<input type="checkbox" name="Box12">Box 12
 
-<BR>
+<br>
 
-<input type="checkbox" name="Box 13">Box 13
-<input type="checkbox" name="Box 14">Box 14
-<input type="checkbox" name="Box 15">Box 15
-<input type="checkbox" name="Box 16">Box 16
-<input type="checkbox" name="Box 17">Box 17
-<input type="checkbox" name="Box 18">Box 18
-<input type="checkbox" name="Box 19">Box 19
-<input type="checkbox" name="Box 20">Box 20
-<input type="checkbox" name="Box 21">Box 21
-<input type="checkbox" name="Box 22">Box 22
-<input type="checkbox" name="Box 23">Box 23
-<input type="checkbox" name="Box 24">Box 24
+<br>
 
+<input type="checkbox" name="Box13">Box 13
+<input type="checkbox" name="Box14">Box 14
+<input type="checkbox" name="Box15">Box 15
+<input type="checkbox" name="Box16">Box 16
+<input type="checkbox" name="Box17">Box 17
+<input type="checkbox" name="Box18">Box 18
+<input type="checkbox" name="Box19">Box 19
+<input type="checkbox" name="Box20">Box 20
+<input type="checkbox" name="Box21">Box 21
+<input type="checkbox" name="Box22">Box 22
+<input type="checkbox" name="Box23">Box 23
+<input type="checkbox" name="Box24">Box 24
 
-<BR>
+<br>
 
-<BR>
+<br>
 
-<BR> <STRONG> Tipo dispositivo </STRONG>
+<br> <strong> Tipo dispositivo </strong>
 
-<BR>
+<br>
 
-<BR>
+<br>
 
-<input type="checkbox" name="Monitor Mindray">Monitor Mindray
+<input type="checkbox" name="MonitorMindray">Monitor Mindray
 
-<BR>
+<br>
 
-<input type="checkbox" name="Bombas Alaris">Bombas Alaris
+<input type="checkbox" name="BombasAlaris">Bombas Alaris
 
-<BR>
+<br>
 
 <input type="checkbox" name="Otros">Otros
 
-<BR>
+<br>
 
-<BR>
+<br>
 
-</UL>
+</form></ul>
 
-</UL>
+</ul>
 
 <p>
 	<input type="submit" value="Enviar">
     <input type="reset" value="Borrar">
 </p>
 
-<BR> Acceso directo a <A HREF= "http://intranet.hsjdbcn.org/">INTRANET</A>.
 
-</BODY>
+<br> Acceso directo a <a href="http://intranet.hsjdbcn.org/" target="_blank">INTRANET</a>.
 
-</HTML>
+</p></div>
+
+</body>
+
+</html>
