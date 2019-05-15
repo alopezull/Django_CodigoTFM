@@ -1,0 +1,64 @@
+<html>
+
+<head>
+
+<title>APP ALARMAS </title>
+
+</head>
+
+<body>
+
+<!-- Código a visualizar -->
+
+
+<h1> APLICACI&Oacute;N ALARMAS UCIP</h1>
+
+<p> Esta aplicaci&oacute;n pretende ser una herramienta de consulta del sistema de alarmas implementado en el servicio UCIP del Hospital Sant Joan de D&eacute;u. 
+
+<hr>
+
+<ul>
+
+<h3> Selecciona los datos que deseas filtrar:</H3>
+
+<ul>
+
+<form method="post" action=""> {% csrf_token %}
+{{ form.as_p }}
+
+<br>
+
+<input type="checkbox" name="boxes[]" value="1">Box 1
+<input type="checkbox" name="boxes[]" value="2">Box 2
+<input type="checkbox" name="boxes[]" value="3">Box 3
+<input type="checkbox" name="boxes[]" value="4">Box 4
+<input type="checkbox" name="boxes[]" value="5">Box 5
+<input type="checkbox" name="boxes[]" value="6"> Box 6
+<input type="checkbox" name="boxes[]" value="7">Box 7
+<input type="checkbox" name="boxes[]" value="8">Box 8
+<input type="checkbox" name="boxes[]">Box 9
+<input type="checkbox" name="boxes[]">Box 10
+<input type="checkbox" name="boxes[]">Box 11
+<input type="checkbox" name="boxes[]">Box 12
+
+<br>
+
+</form> 
+
+</ul>
+
+</ul>
+
+<p>
+	<input type="submit" value="Enviar"/>
+    <input type="reset" value="Borrar"/>
+</p>
+
+
+<br> Acceso directo a <a href="http://intranet.hsjdbcn.org/" target="_blank">INTRANET</a>.
+
+</p></div>
+
+</body>
+
+</html>
