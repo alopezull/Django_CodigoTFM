@@ -1,0 +1,108 @@
+<html>
+
+<head>
+
+<title>APP ALARMAS </title>
+
+</head>
+
+<body>
+
+<!-- Código a visualizar -->
+
+
+<h1> APLICACI&Oacute;N ALARMAS UCIP</h1>
+
+<p> Esta aplicaci&oacute;n pretende ser una herramienta de consulta del sistema de alarmas implementado en el servicio UCIP del Hospital Sant Joan de D&eacute;u. 
+
+<hr>
+
+<ul>
+
+<h3> Selecciona los datos que deseas filtrar:</H3>
+
+<ul>
+
+<form method="post" action="/upload/resultados/">
+ {% csrf_token %}
+ {{forms.as_p}}
+
+<br> <p> <strong>Fecha inicial </strong> <input type="date" name="fechaIni"></p>
+
+<br> <p> <strong>Fecha final </strong> <input type="date" name="fechaFin"></p>
+
+<br> <strong> Número de box: </strong> <br> 
+
+<br>
+
+<input type="checkbox" name="boxes[]" value="1">Box 1
+<input type="checkbox" name="boxes[]" value="2">Box 2
+<input type="checkbox" name="boxes[]" value="3">Box 3
+<input type="checkbox" name="boxes[]" value="4">Box 4
+<input type="checkbox" name="boxes[]" value="5">Box 5
+<input type="checkbox" name="boxes[]" value="6"> Box 6
+<input type="checkbox" name="boxes[]" value="7">Box 7
+<input type="checkbox" name="boxes[]" value="8">Box 8
+<input type="checkbox" name="boxes[]">Box 9
+<input type="checkbox" name="boxes[]">Box 10
+<input type="checkbox" name="boxes[]">Box 11
+<input type="checkbox" name="boxes[]">Box 12
+
+<br>
+
+<br>
+
+<input type="checkbox" name="boxes[]">Box 13
+<input type="checkbox" name="boxes[]">Box 14
+<input type="checkbox" name="boxes[]">Box 15
+<input type="checkbox" name="boxes[]">Box 16
+<input type="checkbox" name="boxes[]">Box 17
+<input type="checkbox" name="boxes[]">Box 18
+<input type="checkbox" name="boxes[]">Box 19
+<input type="checkbox" name="boxes[]">Box 20
+<input type="checkbox" name="boxes[]">Box 21
+<input type="checkbox" name="boxes[]">Box 22
+<input type="checkbox" name="boxes[]">Box 23
+<input type="checkbox" name="boxes[]">Box 24
+
+<br>
+
+<br>
+
+<br> <strong> Tipo dispositivo </strong>
+
+<br>
+
+<br>
+
+<input type="checkbox" name="device">Monitor Mindray
+
+<br>
+
+<input type="checkbox" name="device">Bombas Alaris
+
+<br>
+
+<input type="checkbox" name="device">Otros
+
+<br>
+
+<br>
+
+</ul>
+
+</ul>
+
+<p>
+	<input type="submit" value="Enviar">
+    <input type="reset" value="Borrar">
+</p>
+</form>
+
+<br> Acceso directo a <a href="http://intranet.hsjdbcn.org/" target="_blank">INTRANET</a>.
+
+</p></div>
+
+</body>
+
+</html>

@@ -4,7 +4,19 @@
 	<title> Resultados </title>
 </head>
 <body>
-	<h2>{{respuesta}}</h2>
+<h1> RESULTADOS OBTENIDOS</h1>
+
+<p> Los resultados obtenidos seg&uacute;n tu b&uacute;squeda son: 
+
+<hr>
+
+<ul>
+	<h2>{{box}}</h2>
+	<h3>
+		{% for x in c %}
+			<th>{{x}}</th>
+		{% endfor %}
+	</h3>
 	<h2>prueba</h2>
 	<h2>Prueba</h2>
 

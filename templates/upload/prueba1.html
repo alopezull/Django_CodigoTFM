@@ -23,7 +23,7 @@
 
 <ul>
 
-<form method="post" action=""> {% csrf_token %}
+<form method="post" action="/upload/resultados/"> {% csrf_token %}
 {{ form.as_p }}
 
 <br>
@@ -36,14 +36,10 @@
 <input type="checkbox" name="boxes[]" value="6"> Box 6
 <input type="checkbox" name="boxes[]" value="7">Box 7
 <input type="checkbox" name="boxes[]" value="8">Box 8
-<input type="checkbox" name="boxes[]">Box 9
-<input type="checkbox" name="boxes[]">Box 10
-<input type="checkbox" name="boxes[]">Box 11
-<input type="checkbox" name="boxes[]">Box 12
 
 <br>
 
-</form> 
+ 
 
 </ul>
 
@@ -54,7 +50,7 @@
     <input type="reset" value="Borrar"/>
 </p>
 
-
+</form>
 <br> Acceso directo a <a href="http://intranet.hsjdbcn.org/" target="_blank">INTRANET</a>.
 
 </p></div>

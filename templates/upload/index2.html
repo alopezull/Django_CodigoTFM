@@ -23,8 +23,9 @@
 
 <ul>
 
-<form method="post" action="/upload/resultados/"> {% csrf_token %}
-{{ form.as_p }}
+<form method="post" action="/upload/resultados/">
+ {% csrf_token %}
+ {{forms.as_p}}
 
 <p>
 	<input type="submit" value="Enviar">
