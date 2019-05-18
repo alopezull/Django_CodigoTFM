@@ -1,5 +1,6 @@
 import pandas as pd
-from .models import AlarmsData
+from upload.models import AlarmsData
+
 
 def insert_data_into_db(file):
     print("Inserting data to DB from file- ", file)
@@ -17,3 +18,4 @@ def insert_data_into_db(file):
             alarm.save()
 
     print("Saved")
+    
