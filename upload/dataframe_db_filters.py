@@ -1,6 +1,6 @@
-from upload.models import FiltersDevices
+from .models import FiltersDevices
 import pandas as pd
 
-def data_filters(FiltersDevices):
-    df_filters = pd.DataFrame.from_records(FiltersDevices.objects.all().values().distinct());
-    return(df_filters)
+def data_filters():
+	df_filters = pd.DataFrame.from_records(FiltersDevices.objects.all().values().distinct());
+	print(df_filters.head())

@@ -1,7 +1,7 @@
 from upload.models import AlarmsData
 import pandas as pd
 
-def statiscal(AlarmsData):
+def statiscal(data):
 	# Cantidad de alarmas por boxes
 	statiscal_box = data.groupby('BedRef')['ev_ID'].count()
 	# Cantidad de alarmas por dispositivos (Bombas, Monitor, Respirador)

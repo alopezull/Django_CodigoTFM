@@ -10,30 +10,11 @@ STATUS_FILE = (
     ('n', 'not added'),
 )
 
-STATUS_DF = (
-    ('y', 'dataframed'),
-    ('n', 'not dataframed'),
-)
-
-STATUS_DB = (
-    ('y', 'filtered'),
-    ('n', 'not filtered'),
-)
-
 class Events_file(models.Model):
     events = models.FileField(upload_to='events')
     added_to_db = models.CharField(max_length=1, choices=STATUS_FILE, default='n')
     upload_date = models.DateTimeField('upload date')
 
-class Events_df(models.Model):
-    events = models.FileField(upload_to='events_df')
-    added_to_df = models.CharField(max_length=1, choices=STATUS_DF, default='n')
-    upload_date = models.DateTimeField('upload date')
-
-class Events_filt(models.Model):
-    events = models.FileField(upload_to='events_filt')
-    filtered_db = models.CharField(max_length=1, choices=STATUS_DB, default='n')
-    upload_date = models.DateTimeField('upload date')
 
 class AlarmsData(models.Model):
     ev_ID = models.IntegerField(default=0)
@@ -48,16 +29,9 @@ class AlarmsData(models.Model):
     ev_EndEvent = models.IntegerField(default=0)
     filename = models.CharField(max_length=200, default='filename missing')
 
-    objects = DataFrameManager()
-
 class Filters_file(models.Model):
     filters = models.FileField(upload_to='filters')
     added_to_db = models.CharField(max_length=1, choices=STATUS_FILE, default='n')
-    upload_date = models.DateTimeField('upload date')
-
-class Filters_df(models.Model):
-    events = models.FileField(upload_to='filters_df')
-    added_to_df = models.CharField(max_length=1, choices=STATUS_DF, default='n')
     upload_date = models.DateTimeField('upload date')
 
 class FiltersDevices(models.Model):
@@ -68,4 +42,3 @@ class FiltersDevices(models.Model):
     Tractament3= models.IntegerField(default=0)
     Device_Type = models.CharField(max_length=200, default='type device missing')
     
-    objects = DataFrameManager()

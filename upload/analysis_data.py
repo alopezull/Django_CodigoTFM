@@ -1,6 +1,6 @@
-from upload.models import AlarmsData
+from .models import AlarmsData
 import pandas as pd
-from upload.form import inicial
+from .form import inicial
 
 
 def analysis(AlarmsData, fechaInicial, fechaFinal, Boxes, Devices):
