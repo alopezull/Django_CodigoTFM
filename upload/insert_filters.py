@@ -10,7 +10,7 @@ def insert_filters_into_db(file):
 
     # iterate on the dataset to store into DB only the required values
     for row in  data.itertuples():
-            filters = FiltersDevices(Code=row.Code, Text=row.Text, Tractament1=row.Tractament1, Tractament2=row.Tractament2,Tractament3=row.Tractament3, Device_Type=file)
-            filters.save()
+            filt = FiltersDevices(Code=row.Code, Text=row.Text, Tractament1=row.Tractament1, Tractament2=row.Tractament2,Tractament3=row.Tractament3, Device_Type=file)
+            filt.save()
 
     print("Saved")

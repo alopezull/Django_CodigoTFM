@@ -28,15 +28,16 @@ BOX_CHOICES = (
 	)
 
 DEVICES_CHOICES = (
-	('MonitorMindray','Monitor Mindray'), 
-	('BombasAlaris','Bombas Alaris'),
-	('Otros','Otros'),)
+	('BIG_DIPPER','Monitor Mindray'), 
+	('Alaris','Bombas Alaris'),
+	('Respironics','Respironics'),
+	('Servo','ServoI/U'),
+	('Respironics','Respironics'),
+	('PrismaFlex','PrismaFlex'),)
 
 class inicial(forms.Form):
 	fechaInicial=forms.DateField(label='Fecha Inicial', input_formats='%d-%m-%Y', widget=forms.SelectDateWidget)
 	fechaFinal=forms.DateField(label='Fecha Final', widget=forms.SelectDateWidget)
-	check_box = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
-		choices=BOX_CHOICES)
-	check_devices = forms.MultipleChoiceField(widget=forms.CheckboxSelectMultiple,
-		choices=DEVICES_CHOICES)
+	check_box = forms.ChoiceField(choices=BOX_CHOICES, required=True, label="Seleccione el box")
+	check_devices = forms.ChoiceField(choices=DEVICES_CHOICES, required=True, label="Seleccione el dispositivo")
 

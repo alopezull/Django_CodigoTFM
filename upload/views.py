@@ -18,9 +18,9 @@ def resultados(request):
 	# Recogemos los datos del formulario
 	form  = inicial(request.POST)
 	data = request.POST.copy()
-	c = data.getlist('check_box')
+	c = data.get('check_box')
 	#box = data.get('boxes')
-	e=data.getlist('check_devices')
+	e=data.get('check_devices')
 	#dev=data.get('devices')
 	# Para las fechas, obtenemos valor DIA, MES y AÑO por separado
 	fechaI_day=data['fechaInicial_day']
@@ -35,8 +35,10 @@ def resultados(request):
 	fechaFinal=fechaF_year+'/'+fechaF_month+'/'+fechaF_day
 	dateFinal=datetime.strptime(fechaFinal, '%Y/%m/%d').date()
 	# 
-	df=filter_data(AlarmsData)
-	prueba=df.filter(ev_ID=52093)
+	#df=dataframe_db_alarms(AlarmsData)
+	#prueba=df.head()
+	# x=range(1,11)
+	# prueba=plot_device(x)
 
 	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
 

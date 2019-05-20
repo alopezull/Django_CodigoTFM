@@ -1,4 +1,4 @@
-from upload.models import AlarmsData
+from .models import AlarmsData
 import pandas as pd
 
 def filtering(alarm):
