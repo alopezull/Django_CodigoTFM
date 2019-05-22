@@ -39,6 +39,7 @@ def resultados(request):
 	#prueba=df.head()
 	# x=range(1,11)
 	# prueba=plot_device(x)
+	prueba = dataframe_db_alarms(dateInicial, dateFinal, c, e)[:5]
 
 	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
 

@@ -5,7 +5,7 @@ from matplotlib.figure import Figure
 
 
 
-def plot_devices(request):
+def plot_devices(alarms):
 	fig=Figure()
 	ax=fig.add_subplot(111)
 	ax1=fig.add_subplot(1,1,1)
@@ -13,7 +13,6 @@ def plot_devices(request):
 	ax1.set_ylabel('Total Alarmas')
 	ax1.set_title('Total alarmas por dispositivo')
 	alarms.plot(kind='bar')
-	# Guardamos la imagen en un buffer
 	canvas = FigureCanvas(fig)
 	response=django.http.HttpResponse(content_type='image/png')
 	canvas.print_png(response)
