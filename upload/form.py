@@ -32,12 +32,11 @@ DEVICES_CHOICES = (
 	('Alaris','Bombas Alaris'),
 	('Respironics','Respironics'),
 	('Servo','ServoI/U'),
-	('Respironics','Respironics'),
 	('PrismaFlex','PrismaFlex'),)
 
 class inicial(forms.Form):
-	fechaInicial=forms.DateField(label='Fecha Inicial', input_formats='%d-%m-%Y', widget=forms.SelectDateWidget)
-	fechaFinal=forms.DateField(label='Fecha Final', widget=forms.SelectDateWidget)
+	fechaInicial=forms.DateField(label='Fecha Inicial', input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget)
+	fechaFinal=forms.DateField(label='Fecha Final',input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget)
 	check_box = forms.ChoiceField(choices=BOX_CHOICES, required=True, label="Seleccione el box")
 	check_devices = forms.ChoiceField(choices=DEVICES_CHOICES, required=True, label="Seleccione el dispositivo")
 

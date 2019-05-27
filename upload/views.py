@@ -30,19 +30,16 @@ def resultados(request):
 	fechaF_month=data['fechaFinal_month']
 	fechaF_year=data['fechaFinal_year']
 	# Los agrupamos como fecha (Y/m/d)
-	fechaInicial=fechaI_year+'/'+fechaI_month+'/'+fechaI_day
-	dateInicial=datetime.strptime(fechaInicial, '%Y/%m/%d').date()
-	fechaFinal=fechaF_year+'/'+fechaF_month+'/'+fechaF_day
-	dateFinal=datetime.strptime(fechaFinal, '%Y/%m/%d').date()
-	# 
-	#df=dataframe_db_alarms(AlarmsData)
-	#prueba=df.head()
-	# x=range(1,11)
-	# prueba=plot_device(x)
-	prueba = dataframe_db_alarms.data_alarms(dateInicial, dateFinal, c, e)
+	fechaInicial=fechaI_day+'-'+fechaI_month+'-'+fechaI_year
+	dateInicial=datetime.strptime(fechaInicial, '%d-%m-%Y').strftime('%Y-%m-%d')
+	fechaFinal=fechaF_day+'-'+fechaF_month+'-'+fechaF_year
+	dateFinal=datetime.strptime(fechaFinal, '%d-%m-%Y').strftime('%Y-%m-%d')
 
-
-	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
+	df_alarms = dataframe_db_alarms.data_alarms(dateInicial, dateFinal, c, e)
+	df_filter_alarms = filter_data.filtering(df_alarms)
+	df_filters = dataframe_db_filters.data_filters(e)
+	prueba=df_filters
+	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'dateFinal':dateFinal, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
 
 def index(request):
 	form = inicial()
