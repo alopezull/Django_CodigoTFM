@@ -34,9 +34,14 @@ DEVICES_CHOICES = (
 	('Servo','ServoI/U'),
 	('PrismaFlex','PrismaFlex'),)
 
+YEARS = (
+	(2018),
+	(2019),)
+
+
 class inicial(forms.Form):
-	fechaInicial=forms.DateField(label='Fecha Inicial', input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget)
-	fechaFinal=forms.DateField(label='Fecha Final',input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget)
+	fechaInicial=forms.DateField(label='Fecha Inicial', input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget(years=YEARS))
+	fechaFinal=forms.DateField(label='Fecha Final',input_formats= ["%d-%m-%Y"], widget=forms.SelectDateWidget(years=YEARS))
 	check_box = forms.ChoiceField(choices=BOX_CHOICES, required=True, label="Seleccione el box")
 	check_devices = forms.ChoiceField(choices=DEVICES_CHOICES, required=True, label="Seleccione el dispositivo")
 

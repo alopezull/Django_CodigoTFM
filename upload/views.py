@@ -6,7 +6,7 @@ from django.views.decorators.csrf import requires_csrf_token
 from django.template import RequestContext
 from upload.form import inicial
 import pandas as pd
-from . import dataframe_db_alarms, dataframe_db_filters, filter_data
+from . import dataframe_db_alarms, dataframe_db_filters, filter_data, cant_box_dev, recuento
 from datetime import datetime
 
 
@@ -38,7 +38,9 @@ def resultados(request):
 	df_alarms = dataframe_db_alarms.data_alarms(dateInicial, dateFinal, c, e)
 	df_filter_alarms = filter_data.filtering(df_alarms)
 	df_filters = dataframe_db_filters.data_filters(e)
-	prueba=df_filters
+	prueba=recuento.count(df_filters)
+	# df_prueba=cant_box_dev.cantidad_box_dev(df_filter_alarms,c, e)
+	# prueba=df_prueba
 	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'dateFinal':dateFinal, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
 
 def index(request):
