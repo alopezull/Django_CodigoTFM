@@ -2,9 +2,7 @@ from django.contrib import admin
 from .models import Events_file, AlarmsData, Filters_file, FiltersDevices
 from . import insert_data, insert_filters, dataframe_db_alarms, dataframe_db_filters
 
-# new fuction to add an action into admin
 def mark_updated1(modeladmin, request, queryset):
-    #queryset.update(added_to_db='y')
     for obj in queryset:
         filename = obj.events
         insert_data.insert_data_into_db(filename)
@@ -12,7 +10,6 @@ def mark_updated1(modeladmin, request, queryset):
 mark_updated1.short_description = 'Add the contained data to database'
 
 def mark_updated2(modeladmin, request, queryset):
-    #queryset.update(added_to_db='y')
     for obj in queryset:
         filename = obj.filters
         insert_filters.insert_filters_into_db(filename)
@@ -37,6 +34,5 @@ class Filters_fileAdmin(admin.ModelAdmin):
     ordering = ['-upload_date']
     actions = [mark_updated2, test_pandas2]
 
-#admin.site.register(Events_file) # the only line needed to upload a file
-admin.site.register(Events_file, Events_fileAdmin) # upload file and more info
-admin.site.register(Filters_file, Filters_fileAdmin)
+admin.site.register(Events_file, Events_fileAdmin) 
+admin.site.register(Filters_file, Filters_fileAdmin) 

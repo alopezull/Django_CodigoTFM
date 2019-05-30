@@ -1,13 +1,15 @@
 from upload.models import AlarmsData
 import pandas as pd
 
-def statiscal(data):
-	# Cantidad de alarmas por boxes
-	statiscal_box = data.groupby('BedRef')['ev_ID'].count()
-	# Cantidad de alarmas por dispositivos (Bombas, Monitor, Respirador)
-	statiscal_devices = data.groupby('ev_DeviceName')['ev_ID'].count()
-	# Cantidad de alarmas sin paciente dado de alta
-	statiscal_nopatient=data[data['PatientRef'] == 0]
-	return (statiscal_box, statiscal_devices, statiscal_nopatient)
+def statiscal(alarmas):
+	mensual_total= alarmas.resample('M').sum()
+	diario_total=mensual/30
+	mensual_mean= alarmas.resample('M').mean()
+	diario_mean=mensual/30
+	mensual_max=alarmas.resample('M').max()
+	diario_max=mensual_max/30
+	mensual_min=alarmas.resample('M').min()
+	diario_min=mensual_min/30
 
+	return (diario_total, diario_mean, diario_max, diario_min)
 

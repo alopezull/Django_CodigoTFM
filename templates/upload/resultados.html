@@ -6,6 +6,28 @@
 <body>
 <h1> RESULTADOS OBTENIDOS</h1>
 
+<p> Resultados generales:
+
+<ul> 
+
+	<p> Media de alarmas diarias*:
+	<p> Máximo de alarmas diarias*:
+	<p> Mínimo de alarmas diarias*: 
+
+<p> * Se estiman meses de 30 días
+
+	<p> Cantidad alarmas sonoras incluidas en el primer filtraje:
+
+	<p> Cantidad alarmas sonoras incluidas en el segundo filtraje:
+
+	<p> Cantidad alarmas sonoras incluidas en el tercer filtraje: 
+
+	<p> Cantidad alarmas sonoras generadas hasta el segundo filtraje:  
+
+	<p> Cantidad alarmas sonoras generadas hasta el tercer filtraje:  
+
+	<p> Cantidad alarmas sin paciente dado de alta: 
+
 <p> Los resultados obtenidos seg&uacute;n tu b&uacute;squeda son: 
 
 <hr>
@@ -14,12 +36,13 @@
 
 	<h3> Datos num&eacute;ricos: </h3>
 
-		<p> Cantidad de alarmas total: {{XXXXXX}}
+	<p> Alarmas totales entre las fechas seleccionadas: 
 
-		<p> Cantidad de alarmas por boxes: {{XXXXX}}
+	<p> Alarmas totales en el box seleccionado: 
 
-		<p> Cantidad de alarmas por dispositivos: {{XXXXX}}
+	<p> Alarmas totales procedentes del dispositivo seleccionado: 
 
+	<p> Alarmas totales entre las fechas, el box y el dispositivo seleccionado: 
 
 	<h3>
 		{% for x in c %}
@@ -35,7 +58,12 @@
 	<h2>{{e}}</h2>
 	<h2>{{dateInicial}}</h2>
 	<h2>{{dateFinal}}</h2>
-	<h2>{{prueba}}</h2>
+	<h3>
+		{% for z in prueba %}
+			<th>{{z}}</th>
+		{% endfor %}
+	</h3>
+		<h2>{{prueba}}</h2>
 	<h3> Datos gr&aacute;ficos: </h3>
 
 		<p> Gr&aacute;fica ...

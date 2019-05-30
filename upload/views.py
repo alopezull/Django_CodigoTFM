@@ -35,12 +35,12 @@ def resultados(request):
 	fechaFinal=fechaF_day+'-'+fechaF_month+'-'+fechaF_year
 	dateFinal=datetime.strptime(fechaFinal, '%d-%m-%Y').strftime('%Y-%m-%d')
 
-	df_alarms = dataframe_db_alarms.data_alarms(dateInicial, dateFinal, c, e)
-	df_filter_alarms = filter_data.filtering(df_alarms)
-	df_filters = dataframe_db_filters.data_filters(e)
-	prueba=recuento.count(df_filters)
-	# df_prueba=cant_box_dev.cantidad_box_dev(df_filter_alarms,c, e)
-	# prueba=df_prueba
+	#df_alarms = dataframe_db_alarms.data_alarms(dateInicial, dateFinal, c, e)
+	df_filter_alarms = filter_data.filtering()
+	df_filters = dataframe_db_filters.data_filters()
+	#df_prueba=cant_box_dev.cantidad_box_dev(df_alarms,c, e)
+	#prueba=df_prueba
+	prueba=df_filter_alarms
 	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'dateFinal':dateFinal, 'data':data, 'c':c, 'e':e, 'prueba':prueba})
 
 def index(request):
