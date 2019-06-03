@@ -12,7 +12,6 @@ def statiscal(alarm):
 	alarms_counts3 = alarm.groupby('BedRef',as_index=False).agg({"ev_ID": "count"})
 	
 	# Cantidad de alarmas por dispositivos (Bombas, Monitor, Respirador)
-	### Cambiar valores ev_DeviceName por los nombres reales de los dispositivos
 	# Creamos diccionario con valores a reemplazar (información proporcionada por el fabricante)
 	alarms_counts4=alarm.groupby('ev_DeviceName', as_index=False).agg({"ev_ID": "count"})
 	

@@ -22,12 +22,25 @@
 </ul>
 <hr>
 <h3> Resultados seg&uacute;n el tipo de alarma:: </h3>
-	{% for x in prueba %}
-	<tr>
-		<td>{{ x.Alarmas }}</td>
-		<td>{{ x.Cantidad }}</td>
-	</tr>
-	{% endfor %}
+	
+<table class="table">
+	<thread>
+		<tr>
+			<td> </td>
+			<td>Alarma</td>
+			<td>Cantidad</td>
+		</tr>
+	</thread>
+
+	<tbody>
+		{% for x in prueba %}
+		<tr>
+			<td> {{x.Alarmas}}</td>
+			<td> {{x.Cantidad}}</td>
+		{% endfor %}
+	</tbody>
+</table>
+
 </hr>
 <hr>
 <h3> Los resultados obtenidos seg&uacute;n tu b&uacute;squeda son: </h3>
@@ -40,8 +53,6 @@
 <hr>
 	<h3> Datos gr&aacute;ficos: </h3>
 <img src="data:image/png;base64,{{ grafica|safe }}">
-
-{{prueba}}
 
 </body>
 </html>

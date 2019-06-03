@@ -5,10 +5,6 @@ from upload.models import AlarmsData
 def insert_data_into_db(file):
     print("Inserting data to DB from file- ", file)
     data = pd.read_excel(file)
-    # data=file_content.drop(columns=['ev_ReceivingTime','ev_ReceivingTimeUTC','dev_ID',
-    #                                 'ev_DeviceNumber','ev_Status','ev_DescriptionLocalized',
-    #                                 'par_ID', 'ev_PhysicalDeviceNumber','ev_CustomData'], axis='1')
-
     # iterate on the dataset to store into DB only the required values
     for row in  data.itertuples():
             alarm = AlarmsData(ev_ID=row.ev_ID, ev_EventTime=row.ev_EventTime, PatientRef=row.PatientRef,

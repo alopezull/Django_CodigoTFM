@@ -14,7 +14,8 @@ Now we are going to fill all those tables: check the file 'insert_data.py' in
 upload app. The only function takes the path and name of the excel file and creates
 a DataFrame. Then this dataframe is iterated row by row and its data is stored into db.
 
-USE DATA FROM DB WITH PANDAS
+HOW TO USE INDEX PAGE
 ============================
-Check "pandas_from_db" file.
+Select "Fecha Inicial", "Fecha Final", "Box" and "Dispositivo" and apply to "Enviar". If you want to insert new values, press "Borrar". You can also be redirect to "Intranet" (hospital web page).
+
 
