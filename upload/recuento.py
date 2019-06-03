@@ -1,7 +1,7 @@
 from .models import AlarmsData
 import pandas as pd
 
-def count(x):
+def cuenta(x):
 	# Recuento
 	if (x.empty):
 		y=print("No existen valores")
