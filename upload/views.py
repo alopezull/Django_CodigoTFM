@@ -42,18 +42,19 @@ def resultados(request):
 	# Función para calcular cantidades de filtraje
 	(filt1_tot, filt1_son, filt1_porcentaje, filt2_tot, filt2_son,filt2_porcentaje, filt3_tot, filt3_son, filt3_porcentaje)=filt_tract.reduccion(df_filters)
 	(cant_alarms1, cant_alarms2, cant_alarms3, cant_pac0)=event_total.recuento_total(df_filter_alarms)
-	# Funciones estadísticas
+	# Función estadísticas
 	(alarms_counts1, alarms_counts2, alarms_counts3, alarms_counts4)=statiscal_data.statiscal(df_filter_alarms)
+	(analysis_filt1, analysis_filt2, analysis_filt3)=analysis_data.analysis(df_filter_alarms, df_filters)
+	# Función para tabla de frecuencias
+	#tabla=statiscal_data.get_alarms_quantity(df_filter_alarms)
 
+	# Función para gráficas
+	#grafica=plot_device.plot_devices(alarms_counts2)
+	
 	# Función para calcular datos de la busqueda a partir del forms
 	(alarm_date, alarm_box, alarm_dev, alarm_tot)=filter_forms_data.filt_forms(df_filter_alarms, dateInicial, dateFinal, c, e)
-	# Funciones para gráficas
-	(analysis_filt1, analysis_filt2, analysis_filt3)=analysis_data.analysis(df_filter_alarms, df_filters)
-	prueba=alarms_counts2
-	prueba1=alarms_counts2['Cantidad']
-	#grafica=plot_device.plot_devices(alarms_counts2)
-	# prueba=cant_box_dev.cantidad_box_dev(prueba1,c,e)
-	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'dateFinal':dateFinal, 'data':data, 'c':c, 'e':e, 'prueba':prueba,'prueba1':prueba1, 'filt1_tot':filt1_tot, 'filt1_son':filt1_son,'filt1_porcentaje':filt1_porcentaje, 'filt2_tot':filt2_tot, 'filt2_son':filt2_son,'filt2_porcentaje':filt2_porcentaje, 'filt3_tot':filt3_tot, 'filt3_son':filt3_son, 'filt3_porcentaje':filt3_porcentaje,'cant_alarms1':cant_alarms1 ,'cant_alarms2':cant_alarms2,'cant_alarms3':cant_alarms3, 'cant_pac0':cant_pac0, 'alarm_date':alarm_date, 'alarm_box':alarm_box, 'alarm_dev':alarm_dev, 'alarm_tot':alarm_tot, 'alarms_counts2':alarms_counts2})
+	
+	return render(request, 'upload/resultados.html', {'dateInicial':dateInicial, 'dateFinal':dateFinal, 'c':c, 'e':e, 'filt1_tot':filt1_tot, 'filt1_son':filt1_son,'filt1_porcentaje':filt1_porcentaje, 'filt2_tot':filt2_tot, 'filt2_son':filt2_son,'filt2_porcentaje':filt2_porcentaje, 'filt3_tot':filt3_tot, 'filt3_son':filt3_son, 'filt3_porcentaje':filt3_porcentaje,'cant_alarms1':cant_alarms1 ,'cant_alarms2':cant_alarms2,'cant_alarms3':cant_alarms3, 'cant_pac0':cant_pac0, 'alarm_date':alarm_date, 'alarm_box':alarm_box, 'alarm_dev':alarm_dev, 'alarm_tot':alarm_tot})
 
 def index(request):
 	form = inicial()

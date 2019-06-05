@@ -6,13 +6,13 @@ def recuento_total(alarms):
 	if (alarms.empty):
 		print("No existen valores")
 	else:
-		# Primer filtraje
+		# Hasta el primer filtraje
 		alarms1=alarms[(alarms["ev_EventTime"]>="2018-07-01") & (alarms["ev_EventTime"]<="2018-05-14")]
 		cant_alarms1=len(alarms1)
-		# Segundo filtraje
+		# Hasta el segundo filtraje
 		alarms2=alarms[(alarms["ev_EventTime"]>="2018-07-01") & (alarms["ev_EventTime"]<="2018-07-02")]
 		cant_alarms2=len(alarms2)
-		# Tercer filtraje
+		# Hasta el tercer filtraje
 		alarms3=alarms[(alarms["ev_EventTime"]>="2018-07-01") & (alarms["ev_EventTime"]<="2019-02-28")]
 		cant_alarms3=len(alarms3)
 		# Sin paciente

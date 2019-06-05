@@ -23,24 +23,10 @@
 <hr>
 <h3> Resultados seg&uacute;n el tipo de alarma:: </h3>
 	
-<table class="table">
-	<thread>
-		<tr>
-			<td> </td>
-			<td>Alarma</td>
-			<td>Cantidad</td>
-		</tr>
-	</thread>
+	<p> Aqu&iacute; se deber&iacute;a visualizar la tabla de frecuencias.
 
-	<tbody>
-		{% for x in prueba %}
-		<tr>
-			<td> {{x.Alarmas}}</td>
-			<td> {{x.Cantidad}}</td>
-		{% endfor %}
-	</tbody>
-</table>
 
+	<p> Aqu&iacute; se deber&iacute;an visualizar las gr&aacute;ficas generales.
 </hr>
 <hr>
 <h3> Los resultados obtenidos seg&uacute;n tu b&uacute;squeda son: </h3>
@@ -51,8 +37,6 @@
 	<p> Alarmas totales entre las fechas, el box y el dispositivo seleccionado: {{alarm_tot}}
 </ul>
 <hr>
-	<h3> Datos gr&aacute;ficos: </h3>
-<img src="data:image/png;base64,{{ grafica|safe }}">
 
 </body>
 </html>

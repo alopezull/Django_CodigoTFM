@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title> Resultados </title>
+</head>
+<body>
+<h1> RESULTADOS OBTENIDOS</h1>
+<ul>
+<hr>
+<h3> Resultados generales: </h3>
+<ul> 
+	<p> Cantidad alarmas sonoras / alarmas totales incluidas en el primer filtraje : {{filt1_son}} / {{filt1_tot}} 
+	<p> El portentaje de alarmas sonoras incluidas en el primer filtraje: {{filt1_porcentaje}} %
+	<p> Cantidad alarmas sonoras / alarmas totales incluidas en el segundo filtraje: {{filt2_son}} / {{filt2_tot}} 
+	<p> El portentaje de alarmas sonoras incluidas en el segundo filtraje: {{filt2_porcentaje}} %
+	<p> Cantidad alarmas sonoras / alarmas totales incluidas en el tercer filtraje: {{filt3_son}} / {{filt3_tot}} 
+	<p> El portentaje de alarmas sonoras incluidas en el tercer filtraje: {{filt3_porcentaje}} %
+	<p> Cantidad alarmas sonoras generadas hasta el primer filtraje: {{cant_alarms1}}
+	<p> Cantidad alarmas sonoras generadas hasta el segundo filtraje: {{cant_alarms2}}
+	<p> Cantidad alarmas sonoras generadas hasta el tercer filtraje: {{cant_alarms3}}
+	<p> Cantidad alarmas sin paciente dado de alta: {{cant_pac0}}
+</ul>
+<hr>
+<h3> Resultados seg&uacute;n el tipo de alarma:: </h3>
+
+{% for x in prueba %}  
+<tr> 
+<td> {{x[0]}}</td>  
+<td> {{x[1]}}</td> 
+</tr>   
+{% endfor %} 
+
+<hr>
+<h3> Gráficas generales: </h3>
+
+<ul> <img src="data:image/png;base64,{{ grafica|safe }}">
+
+
+<h3> Los resultados obtenidos seg&uacute;n tu b&uacute;squeda son: </h3>
+<ul> 
+	<p> Alarmas totales entre las fechas seleccionadas: {{alarm_date}}
+	<p> Alarmas totales en el box seleccionado: {{alarm_box}}
+	<p> Alarmas totales procedentes del dispositivo seleccionado: {{alarm_dev}}
+	<p> Alarmas totales entre las fechas, el box y el dispositivo seleccionado: {{alarm_tot}}
+</ul>
+<hr>
+
+</body>
+</html>

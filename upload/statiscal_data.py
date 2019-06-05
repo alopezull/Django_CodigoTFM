@@ -17,3 +17,16 @@ def statiscal(alarm):
 	
 	return (alarms_counts1, alarms_counts2, alarms_counts3, alarms_counts4)
 
+def get_alarms_quantity(alarms): 
+
+	alarms_counts2 = alarm.groupby('ev_Description', as_index=False).agg({"ev_ID": "count"}) 
+	alarms_counts2.rename(columns={'ev_Description': 'Alarmas', 'ev_ID': 'Cantidad'}, inplace=True)
+ 
+	alarmas=[]
+	cantidad=[]
+	for row in alarms_counts2.itertuples(): 
+		alarmas.append(row.Alarmas)
+		cantidad.append(row.Cantidad)
+
+	return (alarmas, cantidad)
+
